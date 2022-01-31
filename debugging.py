@@ -19,10 +19,10 @@ def divisiors(num):
 def run ():
 
     try:
-        num=int(input('Type a number : '))
+        num=int(input('Type a number : '))               
         print(divisiors(num))
         print('the program ended')        
-    except ValueError:
+    except ValueError:                               #print the error 
         print('you must enter a number')
 
 

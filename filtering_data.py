@@ -91,7 +91,7 @@ def run():
     
     adults= [worker['name'] for worker in DATA if worker['age'] >18]
 
-    # old_peaple=[ {**worker,**{'old':worker['age']>70}} for worker in DATA ]
+    # old_peaple=[ {**worker,**{'old':worker['age']>70}} for worker in DATA ] #how to filt data
 
     old_peaple=[ worker|{'old':worker['age']>70} for worker in DATA ]
 

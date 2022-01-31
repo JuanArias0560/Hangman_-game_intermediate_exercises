@@ -11,7 +11,7 @@ def run():
 
     
     
-    squares=[i for i in range(1,999) if i %4 ==0 and i %6 ==0 and i %9 ==0 ]
+    squares=[i for i in range(1,999) if i %4 ==0 and i %6 ==0 and i %9 ==0 ] #examples of lis comprehensions
     print(squares)
     
 

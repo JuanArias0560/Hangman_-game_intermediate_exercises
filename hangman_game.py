@@ -1,35 +1,35 @@
 import random
 import os
 
-clear=lambda:os.system('clear')
+clear=lambda:os.system('clear')       #use of lambda for the creation of a variable that cleans the screen
 
 def read():
     words=[]
-    with open('./files/data.txt', 'r', encoding='utf-8') as f:
+    with open('./files/data.txt', 'r', encoding='utf-8') as f:   #  How to open a file, only read 
         for line in f :
-            line.replace('\n','')
-            words.append(line) 
+            line.replace('\n','')                                #  How to remove empty spaces and line breaks
+            words.append(line)                                   #  Append in a list 
     return words 
 
 def choose():
 
-    words=read()
+    words=read()                                                 # Select a random word 
     word_random=(str(random.choice(words))).upper()  
     return word_random  
 
 def show():
 
-    word_random=choose()
-    list_word_random=[ i for i in word_random.upper() if i!= '\n']
-    word_length= len(list_word_random)
-    all_letters1='_ ' *word_length
-    all_letters=[ i for i in all_letters1 if i!= '\n' and i!=' ']
+    word_random=choose()                                             
+    list_word_random=[ i for i in word_random.upper() if i!= '\n']      # spell random word
+    word_length= len(list_word_random)                                  # word size
+    all_letters1='_ ' *word_length                                       
+    all_letters=[ i for i in all_letters1 if i!= '\n' and i!=' ']       
     
     cont=10
     while all_letters != list_word_random and cont!=0 :
 
         clear()
-        print('You have a ', +cont, 'oportunities' )
+        print('You have a ', +cont, 'oportunities' )                 #opportunity counter
         # print (list_word_random)
         # print(all_letters)  
         # print (word_random)
@@ -43,14 +43,14 @@ def show():
         TYPE A LETTER :
         """        
         try:  
-            letter_choose= (input(MENU)).upper()
+            letter_choose= (input(MENU)).upper()    
             if len(letter_choose)>1:
-                raise ValueError('One latter at a time')                      
+                raise ValueError('One latter at a time')         #check the number of letters entered              
         except ValueError as ve:
             print(ve)
             break         
        
-        letter_selec=[ i for i in range(len(word_random)) if letter_choose==word_random[i] ] 
+        letter_selec=[ i for i in range(len(word_random)) if letter_choose==word_random[i] ]  #check the letters and replace them
         print (letter_selec)
         cont -=1
         for i in letter_selec:

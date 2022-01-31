@@ -3,7 +3,7 @@ def divisiors(num):
     divisors =[]    
     for i in range(1,num + 1):
         if num % i == 0:                          #the red dot is a breakpoint for vscode debugging
-                divisors.append(i)
+                divisors.append(i)                 # add values in divisors 
     return divisors
   
 

@@ -20,3 +20,5 @@ for i in letter_selec:
 
 print(all_letters)
 
+
+#tests for hangman game
